@@ -1,6 +1,7 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import { useAuth } from '../contexts/AuthContext';
 import { useTokens } from '../contexts/TokenContext';
@@ -115,16 +116,20 @@ export default function Sidebar() {
       } bg-surface border-r border-border-soft dark:bg-[#111827] dark:border-[#2D2A45] transition-colors duration-200`}
     >
       <div className={`flex items-center py-5 px-4 ${isCollapsed ? 'justify-center' : 'justify-between'}`}>
-        <div className="flex items-center gap-3 min-w-0">
-          <div className="w-9 h-9 rounded-xl flex items-center justify-center font-bold text-white text-lg flex-shrink-0 bg-gradient-to-br from-brand-indigo to-brand-purple shadow-sm">
-            V
-          </div>
+        <Link href="/" className="flex items-center gap-2 min-w-0 group">
+          <Image
+            src="/v.jpg"
+            alt="V-Try Logo"
+            width={48}
+            height={48}
+            className="w-10 h-10 object-contain rounded-xl flex-shrink-0 group-hover:scale-105 transition-transform"
+          />
           {!isCollapsed && (
             <span className="font-bold text-lg tracking-wide overflow-hidden whitespace-nowrap text-text-main dark:text-[#FBFAFC] transition-colors duration-200">
               V-TRY
             </span>
           )}
-        </div>
+        </Link>
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
           className="p-1.5 rounded-lg hover:bg-surface-soft transition-colors flex-shrink-0 text-text-muted"
@@ -229,14 +234,18 @@ export default function Sidebar() {
   const MobileTopHeader = () => (
     <>
       <header className="lg:hidden fixed top-0 left-0 w-full z-40 px-4 py-3 flex items-center justify-between backdrop-blur-xl bg-surface/90 border-b border-border-soft shadow-sm">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl flex items-center justify-center font-bold text-white text-sm shadow-lg bg-gradient-to-br from-brand-indigo to-brand-purple">
-            V
-          </div>
+        <Link href="/" className="flex items-center gap-2 group">
+          <Image
+            src="/v.jpg"
+            alt="V-Try Logo"
+            width={48}
+            height={48}
+            className="w-8 h-8 object-contain rounded-xl"
+          />
           <span className="font-bold text-sm tracking-wide text-text-main">
             V-TRY
           </span>
-        </div>
+        </Link>
         
         <div className="flex flex-1 justify-center">
           <Link href="/vtokens" className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface border border-border-soft shadow-sm text-xs font-bold text-text-main">

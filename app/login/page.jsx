@@ -1,5 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -72,10 +74,17 @@ export default function Login() {
       <div className="hidden lg:flex lg:w-[60%] flex-col justify-between p-12 relative overflow-hidden bg-gradient-to-br from-[#F8F7FF] via-[#F3EFFF] to-[#FDF2F8] dark:from-[#0B0F1A] dark:via-[#130B24] dark:to-[#1A0B1E] border-r border-border-soft dark:border-[#2D2A45] transition-colors duration-200">
         
         {/* Absolute Top-Left Logo */}
-        <div className="absolute top-8 left-12 z-20 flex items-center gap-2 cursor-default">
-          <div className="w-12 h-12 rounded-xl bg-brand-purple flex items-center justify-center text-white font-bold text-3xl">V</div>
+        <Link href="/" className="absolute top-8 left-12 z-20 flex items-center gap-2 group">
+          <Image
+            src="/v.jpg"
+            alt="V-Try Logo"
+            width={48}
+            height={48}
+            priority
+            className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-xl group-hover:scale-105 transition-transform"
+          />
           <span className="text-3xl font-extrabold tracking-wider text-[#0F172A] dark:text-white">V-TRY</span>
-        </div>
+        </Link>
 
         {/* Text Container restricted to the left */}
         <div className="max-w-md xl:max-w-lg relative z-20 mt-12 pointer-events-auto">
@@ -167,9 +176,13 @@ export default function Login() {
         <div className="w-full max-w-md bg-surface dark:bg-[#1E1B2E] rounded-[24px] p-8 shadow-2xl border border-border-soft dark:border-[#2D2A45] relative z-10 transition-colors duration-200">
           
           <div className="flex flex-col items-center mb-8">
-            <div className="w-12 h-12 rounded-xl flex items-center justify-center text-3xl font-bold text-white bg-brand-purple shadow-lg mb-6">
-              V
-            </div>
+            <Image
+              src="/v.jpg"
+              alt="V-Try Logo"
+              width={48}
+              height={48}
+              className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-xl shadow-lg mb-6"
+            />
             <h1 className="text-2xl font-bold text-text-main dark:text-[#FBFAFC]">
               Welcome to V-Try
             </h1>

@@ -111,11 +111,15 @@ export default function LandingPage() {
       {/* 1. Premium Sticky Navbar */}
       <nav className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ease-in-out bg-white/90 backdrop-blur-md border-b border-gray-100 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#6D3DF5] to-indigo-600 rounded-xl flex items-center justify-center shadow-md shadow-[#6D3DF5]/20 group-hover:scale-105 transition-transform">
-              <span className="text-white font-bold text-xl font-serif">V</span>
-            </div>
-            <span className="font-bold text-2xl tracking-tight text-gray-900">V-TRY</span>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/v.jpg"
+              alt="V-Try Logo"
+              width={48}
+              height={48}
+              priority
+              className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-xl group-hover:scale-105 transition-transform"
+            />
           </Link>
           
           <div className="hidden lg:flex items-center gap-8 font-medium text-sm text-gray-600">
@@ -529,11 +533,14 @@ export default function LandingPage() {
       <footer className="w-full bg-white pt-20 pb-10 px-6 border-t border-gray-200">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 flex-wrap gap-8 mb-16">
           <div className="col-span-2 md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#6D3DF5] to-indigo-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm font-serif">V</span>
-              </div>
-              <span className="font-bold text-xl tracking-tight text-gray-900">V-TRY</span>
+            <Link href="/" className="inline-flex items-center mb-6 group">
+              <Image
+                src="/v.jpg"
+                alt="V-Try Logo"
+                width={48}
+                height={48}
+                className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-xl group-hover:scale-105 transition-transform"
+              />
             </Link>
             <p className="text-gray-500 mb-6 max-w-xs leading-relaxed">The premium AI-powered virtual try-on studio for modern fashion shoppers and brands.</p>
             <div className="flex gap-4 text-gray-400">
